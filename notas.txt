@@ -1,0 +1,228 @@
+Para que sirven ?
+    numpy : caluclo numerico
+            manejo de arrays
+            libreria de python nacida en el 2005
+            100 % open source 
+            se encuentra en Github
+            Creada po Travis Oliphant
+
+            ¿POR QUE NUMPU? 
+               velocidad: es hasta 50veces mas rapido que manjear una lista propia en python o en c. 
+               tamaño
+               tipos de datos 
+               es muy poderosa: con solo numpy es posbile crear redes neuronales artificiales complejas. 
+
+    pandas
+                Fue construida sobre numpy de base. 
+                creada en 2008
+                100% open source 
+                se encuentra en Github
+                El creador fue Wes McKinney
+
+            ¿Porque pandas ?
+                hereda todas las ventajas de python. 
+                su velocidad
+                poco codigo
+                maneja multiples formatos de archivos
+                alienacion inteligente
+
+    sintaxis utilizada 
+        import numpy as np 
+        import pandas as pd 
+
+    
+    NUMPY
+        Numpy Array  
+
+            ¨* Es uno  de los metodos mas utilizados en la libreria de numpy . 
+            * Es la estructura central de numpy
+            * Representa datos de manera estructurada 
+            * Indexado: tiene una estrucutra indexada con el que puede identificar cualquier objeto dentro del array. 
+            * Acceso a uno o muchos elementos. 
+
+            ej: 
+            
+            a = np.array([1,2,3])
+        
+        Tipos de datos :
+
+            Numpy para array ofrece un soporte muy amplio para trabajar diferentes tipos de datos .
+            Los arrays de NumPy solo pueden contener un tipo de dato, ya que esto es lo que le confiere las ventajas de la optimización de memoria.
+
+            Podemos conocer el tipo de datos del array consultando la propiedad .dtype
+
+                arr = np.array([1, 2, 3, 4])
+                arr.dtype
+                ---> dtype('int64')
+            
+            Si queremos usar otro tipo de dato, lo podemos definir en la declaración del array.
+
+                arr = np.array([1, 2, 3, 4], dtype = 'float64')
+                arr.dtype
+                ---> dtype('float64')
+            
+            Ahora vemos que los valores están con punto decimal.
+            
+                arr
+                ---> array([1., 2., 3., 4.])
+            
+            Si ya se tiene el array definido, se utiliza el método .astype() para convertir el tipo de dato.
+
+                arr = np.array([1, 2, 3, 4])
+                arr = arr.astype(np.float64)
+                arr
+                ---> array([1., 2., 3., 4.])
+        
+            También se puede cambiar a tipo booleano recordando que los números diferentes de 0 se convierten en True.
+
+                arr = np.array([0, 1, 2, 3, 4])
+                arr = arr.astype(np.bool_)
+                arr
+                ---> array([False,  True,  True,  True,  True])
+        
+            También podemos convertir los datos en tipo string.
+
+                arr = np.array([0, 1, 2, 3, 4])
+                arr = arr.astype(np.string_)
+                arr
+                ---> array([b'0', b'1', b'2', b'3', b'4'], dtype='|S21')
+            
+            De igual manera, se puede pasar de string a número.
+
+                arr = np.array(['0', '1', '2', '3', '4'])
+                arr = arr.astype(np.int8)
+                arr
+                ---> array([0, 1, 2, 3, 4], dtype=int8)
+            
+            Si un elemento no es de tipo número, el método falla.
+
+                arr = np.array(['hola','0', '1', '2', '3', '4'])
+                arr = arr.astype(np.int8)
+                arr
+                ---> ValueError: invalid literal for int() with base 10: 'hola'
+            
+            El array de Numpy únicamente puede tener un único tipo de datos en el cual va a trabajar. No puedo tener la mitad del array en int y la otra mitad en bool.
+
+        Dimenciones:
+            Revidar archivos en google colab acerca de como saber con ue dimenciones estamos traajando, y como ajustarlas, y manjearlas. 
+
+        Creando arrays: 
+            Revisar archivos de google coolab para determinar cuales con las maneras apra generar arrays desde 0 con numpy. 
+        
+        Shape y Reshape :
+            Como modificar los tamaños de nuestros arrays . google colab
+        
+        Funciones principales:
+            Poniendo en practica algunas de las funciones mas comunes de numpy. 
+        
+        Copy
+            descubre las mejores tecnicas para hacer de la funcion copy una gran ayuda. 
+
+        Condiciones 
+            La manera facil con la que numpy permite realizar condicionales .
+        Operaciones
+            Los elementos de un array con numpy se pueden operar de manera facilisima. 
+        
+    Pandas 
+
+        Series y Dataframes
+
+            Panas maneja dos objetos principales
+            
+                Pandas Series: 
+                    arreglo unidimencional indexado
+                    busqueda por indice
+                    slicing
+                    operaciones aritmeticas
+                    distintos tipos de datos. 
+
+                Pandas DataFrame: 
+                    Estructura principal
+                    arreglo de dos dimenciones
+                    busqueda por indice(columnas o filas)el indice de las columanas es su nombre, y de las filas lo damos nostros, o pandas lo genera. 
+                    slicing
+                    operaciones aritmeticas
+                    distintios tipos de datos
+                    tamaño variable.
+
+                Revisar archivo google colab  Series_Dataframes_pandat.ipynb 
+
+            
+            Leer archivos con pandas : 
+
+                para este ejemplo se uutilizaron los archivos .csv .json que estar en la carpeta de archivos de este curso.
+                El codigo se implemneto en el archivo de google colab de cargando_archivos_pandas.ipynb
+
+            Filtando datos con loc y iloc
+                la difirencia entre estso dos es que loc es mas para labels  como 'Name', mientras que iloc es mas de indices.
+                recichas archivo de google colab de cargando_archivos_pandas.py
+
+            Agragar y elminar datos con Pandas 
+                como eliminar o agragar datos a los frames o dataframes de pandas. 
+                revisar los archivos del curso
+
+            Manejo de dato nulos
+                nos explica a buenas practicas para manejar valores nulos en los diferentes frames y dataframes en pandas
+                revisra archivosd el curso.
+
+            Filtrando por condiciones 
+                como expresar condiciones con planda.
+                revisar archivos del curso. 
+
+
+            Groupy
+
+                El groupby me permite agrupar diferentes categorias o columnas de un dataset,y poder obtener parametros por cada una de esas categorias. 
+                puedo obtner por categorias datos como media, percentiles, minimos, maximos.
+                 Revisar los el archivo de groupby
+
+
+            
+            Combinando Dataframes
+                Es util en muchas ocaciones cuando quiero unificar dos dataframes, para eso hablaremos 
+                de la logica de combinacion o de fusion.
+
+                    Merge - Join
+
+                        Para entender lo siguite abra los archivos:
+                        Merge-join.PNG
+                        merge_join2.PNG
+
+
+                        Supongamos dos datasets "left" y "right".
+
+                        Hay cuatro opciones generales:
+                        left join :  Da prioridad al DataFrame de la izquierda. Trae siempre los datos de la izquierda y las filas en común con el DataFrame de la derecha.
+                        right join : Da prioridad al DataFrame de la derecha. Trae siempre los datos de la derecha y las filas en común con el DataFrame de la izquierda
+                        inner join: Trae solamente aquellos datos que son común en ambos DataFrame
+                        Outer join: Trae los datos tanto del DataFrame de la izquierda como el de la derecha, incluyendo los datos que comparten ambos.
+
+                    Concat 
+                        Para entneder lo siguitene abra los archivos concat-axis0.png y concat-axis1.png
+
+                        Esto me permite concactenar dos dataframes tanto a nivel de filas(axis = 0), como a nivel de columnas(axis =1)
+
+                    REVISAR ARCHIVOS DEL CURSO 
+                    ESTA SON LAS DOS FUNCIONES O HERRAMIENTAS QUE NOS OFRECE PANDAS PARA LA CONCATENACION O UNION DE DOS DATAFRAMES
+           
+                    Join
+
+                        A diferencia del marge, el join va a ir directamente a los indices con los ue estemos trabajando los dataframes,
+                        no a columnas especificas. 
+
+                        Revisar archivos del curso.
+                    
+                    proporciona estrutura muy parecidoa marge pero va directamente a los indices. 
+                    con marge se tiene el control especifico de que colunmas se puede trabajar. 
+
+            Pivot y melt
+                la clase de pivot_table y melt, dos funciones que sirven para cambiar la estructura
+                de nuestro DataFrame de acuerdo a nuestras necesidades.
+
+                    pivot_table: transforma los valores de determinadas columnas o filas en los índices
+                                 de un nuevo DataFrame, y la intersección de estos es el valor resultante.
+
+                    melt:toma las columnas del DataFrame y las pasa a filas, con dos nuevas columnas para especificar la antigua columna y el valor que traía.
+                
+            Apply
+
